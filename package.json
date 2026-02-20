@@ -1,0 +1,46 @@
+{
+  "name": "writeback-sdk",
+  "version": "0.1.0",
+  "description": "Receive feedback from AI agents on your skills, APIs, and MCP servers — and use it to improve them.",
+  "keywords": ["ai", "agents", "mcp", "feedback", "writeback"],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hsantana/writeback-sdk"
+  },
+  "files": ["dist", "src"],
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./express": {
+      "import": "./dist/express.js",
+      "types": "./dist/express.d.ts"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "@modelcontextprotocol/sdk": ">=1.0.0",
+    "express": ">=4.0.0",
+    "zod": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "@modelcontextprotocol/sdk": { "optional": true },
+    "express": { "optional": true }
+  },
+  "devDependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "@types/express": "^5.0.0",
+    "express": "^4.21.0",
+    "typescript": "^5.6.0",
+    "zod": "^3.23.8"
+  }
+}
